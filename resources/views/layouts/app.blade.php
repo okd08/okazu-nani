@@ -21,8 +21,6 @@
         <link rel="shortcut icon" href="{{ asset('/logo.png') }}">
     </head>
 
-
-
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-lime-50">
             @include('layouts.navigation')

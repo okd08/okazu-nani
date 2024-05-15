@@ -1,7 +1,7 @@
+//// アコーディオンの設定 /////
 $(document).ready(function() {
   $('.box').hide(); // アコーディオンの全体を非表示にする
 });
-
 //アコーディオンをクリックした時の動作
 $('.title').on('click', function() {//タイトル要素をクリックしたら
   var findElm = $(this).next(".box");//直後のアコーディオンを行うエリアを取得し
@@ -13,7 +13,6 @@ $('.title').on('click', function() {//タイトル要素をクリックしたら
     $(this).addClass('close');//クラス名closeを付与
   }
 });
-
 $(document).ready(function() {
   $('.selectable-item').on('click', function() {
       $('.selected').removeClass('selected'); // すでに選択された要素から'selected'クラスを削除
@@ -21,6 +20,7 @@ $(document).ready(function() {
   });
 });
 
+///// スライダーの設定 /////
 $('.slider').slick({
   autoplay: false,//自動的に動き出すか。初期値はfalse。
   infinite: true,//スライドをループさせるかどうか。初期値はtrue。

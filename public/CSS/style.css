@@ -1,44 +1,4 @@
 @charset "UTF-8";
-
-/*==================================================
-アコーディオンのためのcss
-===================================*/
-/*アコーディオン全体*/
-.accordion-area{
-    list-style: none;
-    width: 96%;
-    max-width: 900px;
-    margin:0 auto;
-}
-/*アコーディオンタイトル*/
-.title {
-    position: relative;/*+マークの位置基準とするためrelative指定*/
-    cursor: pointer;
-    font-size:1rem;
-}
-/*closeというクラスがついたら形状変化*/
-.title.close::before{
-  transform: rotate(45deg);
-}
-.title.close::after{
-  transform: rotate(-45deg);
-}
-/*アコーディオンで現れるエリア*/
-.box {
-    display: none;/*はじめは非表示*/
-    background: #f3f3f3;
-    margin:0 3% 0 3%;
-    padding: 3%;
-}
-
-.selectable-item:focus,
-.selected {
-  outline: none; /* フォーカス時の枠線を非表示 */
-  box-shadow: 0 0 0 3px rgba(255, 200, 0, 0.653); /* ボタンが選択されたときのリングのスタイル */
-}
-
-
-
 /*==================================================
 スライダーのためのcss
 ===================================*/
@@ -50,11 +10,8 @@
 .slider .slick-slide {
   margin:0 2px;
 }
-
 /*矢印の設定*/
-/*戻る、次へ矢印の位置*/
-.slick-prev, 
-.slick-next {
+.slick-prev, .slick-next {
   position: absolute;/*絶対配置にする*/
   top: 40%;
   cursor: pointer;/*マウスカーソルを指マークに*/
@@ -72,9 +29,39 @@
   right: -1.5%;
   transform: rotate(45deg);
 }
-/*========= レイアウトのためのCSS ===============*/
-ul{
-margin:0;
-padding: 0;
-list-style: none;
+
+/*==================================================
+アコーディオンのためのcss
+===================================*/
+/*アコーディオン全体*/
+.accordion-area{
+    list-style: none;
+    width: 96%;
+    max-width: 900px;
+    margin:0 auto;
+}
+/*アコーディオンタイトル*/
+.title {
+    position: relative;
+    cursor: pointer;
+    font-size:1rem;
+}
+/*closeというクラスがついたら形状変化*/
+.title.close::before{
+  transform: rotate(45deg);
+}
+.title.close::after{
+  transform: rotate(-45deg);
+}
+/*アコーディオンで現れるエリア*/
+.box {
+    display: none;/*はじめは非表示*/
+    background: #f3f3f3;
+    margin:0 3% 0 3%;
+    padding: 3%;
+}
+.selectable-item:focus,
+.selected {
+  outline: none; /* フォーカス時の枠線を非表示 */
+  box-shadow: 0 0 0 3px rgba(255, 200, 0, 0.653); /* ボタンが選択されたときのリングのスタイル */
 }

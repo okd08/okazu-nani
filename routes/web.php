@@ -14,7 +14,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     // Itemコントローラー
-    Route::resource('items', ItemController::class);
+    Route::resource('items', ItemController::class)
+        ->except(['show']); //showメソッドは使わない
     Route::patch('/memo/update', [ItemController::class, 'update_memo'])
         ->name('memo.update');
 });

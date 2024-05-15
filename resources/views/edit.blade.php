@@ -91,7 +91,7 @@
           @endif
           <textarea name="detail" id="detail" rows="3" placeholder="その他を選択した場合の食材名や数量、特記事項などを登録できます"  class="resize-none ml-2 lg:ml-16 p-3 w-10/12 lg:w-8/12 rounded">{{ $item->detail }}</textarea>
 
-          {{-- 登録ボタン --}}
+          {{-- 更新ボタン --}}
           <div class="text-center">
             <button type="submit" class="bg-lime-500 hover:bg-lime-600 text-white text-xl lg:text-2xl font-bold tracking-wider py-2 px-4 rounded-lg mt-10">こうしん</button>
           </div>
@@ -107,7 +107,4 @@
       </div>
     </div>
   </div>
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="/js/create.js"></script>
 </x-app-layout>

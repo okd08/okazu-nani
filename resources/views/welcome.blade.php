@@ -17,9 +17,8 @@
         <link rel="shortcut icon" href="{{ asset('/logo.png') }}">
     </head>
 
-
-
     <body class="font-sans antialiased bg-lime-50">
+        {{-- タイトル --}}
         <div class="text-center mt-12 text-5xl lg:text-6xl font-bold tracking-widest text-lime-500 flex justify-center items-center">
             <p class="rounded-full bg-white p-3 border-4 border-lime-300">今</p>
             <p class="rounded-full bg-white p-1 border-4 border-lime-300 -ml-5 mt-5">日</p>
@@ -31,6 +30,7 @@
             <p class="rounded-full bg-white p-1 border-4 border-lime-300">？</p>
         </div>
 
+        {{-- ログイン/ホームボタン --}}
         <div class="flex justify-center relative w-10/12 lg:w-8/10 mx-auto mb-10">
             <img src="/images/reizouko_open.png" alt="">
             @if (Route::has('login'))
@@ -48,6 +48,7 @@
                 @endauth
             @endif
         </div>
+
         <p class="mb-12 -mt-12 text-sm text-gray-600 text-center">画像：いらすとや</p>
 
         <div class="text-center mb-20 w-10/12 lg:6/12 mx-auto">

@@ -1,17 +1,18 @@
 <x-app-layout>
   @section('title', 'とうろく')
   <x-slot name="header">
-      <h2 class="font-semibold text-lg text-gray-600 leading-tight">
-          食材のとうろく
-      </h2>
+    <h2 class="font-semibold text-lg text-gray-600 leading-tight">
+      食材のとうろく
+    </h2>
   </x-slot>
 
   {{-- フラッシュメッセージ --}}
   @if(session('success'))
     <div class="mt-2 mb-2 bg-green-100 text-green-700 rounded-lg p-4">
-        {{ session('success') }}
+      {{ session('success') }}
     </div>
   @endif
+
   <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -28,135 +29,125 @@
           <ul class="accordion-area mb-8">
             {{-- 肉 --}}
             <li>
-              <section>
-                <div class="title flex items-center border-b-2 bg-pink-100 text-gray-700 rounded px-2 py-2">
-                  <img src="/images/meat/gyu_steak.png" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white">
-                  <h3 class="font-bold ml-2 lg:text-xl">肉</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:w-8 lg:h-8 ml-auto">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                  </svg>
-                </div>
-                <div class="box flex flex-wrap">
-                  @foreach ($niku as $n)
-                    <div class="w-1/3 lg:w-1/5 p-2">
-                      <div onclick="document.getElementById('ingredient_id').value = '{{ $n->id }}'" class="selectable-item hover:ring rounded">
-                        <img src="{{ $n->image }}" alt="{{ $n->name }}" class="bg-white h-20 w-28 lg:h-32 lg:w-48 rounded-t-lg">
-                        <p class="text-center bg-pink-100 rounded-b-lg py-1">{{ $n->name }}</p>
-                      </div>
+              {{-- ヘッダー --}}
+              <div class="title flex items-center border-b-2 bg-pink-100 text-gray-700 rounded px-2 py-2">
+                <img src="/images/meat/gyu_steak.png" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white">
+                <h3 class="font-bold ml-2 lg:text-xl">肉</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:w-8 lg:h-8 ml-auto">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+              {{-- 一覧 --}}
+              <div class="box flex flex-wrap">
+                @foreach ($niku as $n)
+                  <div class="w-1/3 lg:w-1/5 p-2">
+                    <div onclick="document.getElementById('ingredient_id').value = '{{ $n->id }}'" class="selectable-item hover:ring rounded">
+                      <img src="{{ $n->image }}" alt="{{ $n->name }}" class="bg-white h-20 w-28 lg:h-32 lg:w-48 rounded-t-lg">
+                      <p class="text-center bg-pink-100 rounded-b-lg py-1">{{ $n->name }}</p>
                     </div>
-                  @endforeach
-                </div>
-              </section>
+                  </div>
+                @endforeach
+              </div>
             </li>
             {{-- 魚 --}}
             <li>
-              <section>
-                <div class="title flex items-center border-b-2 bg-sky-100 text-gray-700 rounded px-2 py-2">
-                  <img src="/images/fish/kirimi.png" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white">
-                  <h3 class="font-bold ml-2 lg:text-xl">魚</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:w-8 lg:h-8 ml-auto">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                  </svg>
-                </div>
-                <div class="box flex flex-wrap">
-                  @foreach ($sakana as $n)
-                    <div class="w-1/3 lg:w-1/5 p-2">
-                      <div onclick="document.getElementById('ingredient_id').value = '{{ $n->id }}'" class="selectable-item hover:ring rounded">
-                        <img src="{{ $n->image }}" alt="{{ $n->name }}" class="bg-white h-20 w-28 lg:h-32 lg:w-48 rounded-t-lg">
-                        <p class="text-center bg-sky-100 rounded-b-lg py-1">{{ $n->name }}</p>
-                      </div>
+              <div class="title flex items-center border-b-2 bg-sky-100 text-gray-700 rounded px-2 py-2">
+                <img src="/images/fish/kirimi.png" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white">
+                <h3 class="font-bold ml-2 lg:text-xl">魚</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:w-8 lg:h-8 ml-auto">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+              <div class="box flex flex-wrap">
+                @foreach ($sakana as $n)
+                  <div class="w-1/3 lg:w-1/5 p-2">
+                    <div onclick="document.getElementById('ingredient_id').value = '{{ $n->id }}'" class="selectable-item hover:ring rounded">
+                      <img src="{{ $n->image }}" alt="{{ $n->name }}" class="bg-white h-20 w-28 lg:h-32 lg:w-48 rounded-t-lg">
+                      <p class="text-center bg-sky-100 rounded-b-lg py-1">{{ $n->name }}</p>
                     </div>
-                  @endforeach
-                </div>
-              </section>
+                  </div>
+                @endforeach
+              </div>
             </li>
             {{-- 野菜 --}}
             <li>
-              <section>
-                <div class="title flex items-center border-b-2 bg-lime-100 text-gray-700 rounded px-2 py-2">
-                  <img src="/images/vegetable/cabbage.png" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white">
-                  <h3 class="font-bold ml-2 lg:text-xl">野菜</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:w-8 lg:h-8 ml-auto">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                  </svg>
-                </div>
-                <div class="box flex flex-wrap">
-                  @foreach ($yasai as $n)
-                    <div class="w-1/3 lg:w-1/5 p-2">
-                      <div onclick="document.getElementById('ingredient_id').value = '{{ $n->id }}'" class="selectable-item hover:ring rounded">
-                        <img src="{{ $n->image }}" alt="{{ $n->name }}" class="bg-white h-20 w-28 lg:h-32 lg:w-48 rounded-t-lg">
-                        <p class="text-center bg-lime-100 rounded-b-lg py-1">{{ $n->name }}</p>
-                      </div>
+              <div class="title flex items-center border-b-2 bg-lime-100 text-gray-700 rounded px-2 py-2">
+                <img src="/images/vegetable/cabbage.png" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white">
+                <h3 class="font-bold ml-2 lg:text-xl">野菜</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:w-8 lg:h-8 ml-auto">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+              <div class="box flex flex-wrap">
+                @foreach ($yasai as $n)
+                  <div class="w-1/3 lg:w-1/5 p-2">
+                    <div onclick="document.getElementById('ingredient_id').value = '{{ $n->id }}'" class="selectable-item hover:ring rounded">
+                      <img src="{{ $n->image }}" alt="{{ $n->name }}" class="bg-white h-20 w-28 lg:h-32 lg:w-48 rounded-t-lg">
+                      <p class="text-center bg-lime-100 rounded-b-lg py-1">{{ $n->name }}</p>
                     </div>
-                  @endforeach
-                </div>
-              </section>
+                  </div>
+                @endforeach
+              </div>
             </li>
             {{-- きのこ --}}
             <li>
-              <section>
-                <div class="title flex items-center border-b-2 bg-orange-100 text-gray-700 rounded px-2 py-2">
-                  <img src="/images/kinoko/eringi.png" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white">
-                  <h3 class="font-bold ml-2 lg:text-xl">きのこ</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:w-8 lg:h-8 ml-auto">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                  </svg>
-                </div>
-                <div class="box flex flex-wrap">
-                  @foreach ($kinoko as $n)
-                    <div class="w-1/3 lg:w-1/5 p-2">
-                      <div onclick="document.getElementById('ingredient_id').value = '{{ $n->id }}'" class="selectable-item hover:ring rounded">
-                        <img src="{{ $n->image }}" alt="{{ $n->name }}" class="bg-white h-20 w-28 lg:h-32 lg:w-48 rounded-t-lg">
-                        <p class="text-center bg-orange-100 rounded-b-lg py-1">{{ $n->name }}</p>
-                      </div>
+              <div class="title flex items-center border-b-2 bg-orange-100 text-gray-700 rounded px-2 py-2">
+                <img src="/images/kinoko/eringi.png" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white">
+                <h3 class="font-bold ml-2 lg:text-xl">きのこ</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:w-8 lg:h-8 ml-auto">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+              <div class="box flex flex-wrap">
+                @foreach ($kinoko as $n)
+                  <div class="w-1/3 lg:w-1/5 p-2">
+                    <div onclick="document.getElementById('ingredient_id').value = '{{ $n->id }}'" class="selectable-item hover:ring rounded">
+                      <img src="{{ $n->image }}" alt="{{ $n->name }}" class="bg-white h-20 w-28 lg:h-32 lg:w-48 rounded-t-lg">
+                      <p class="text-center bg-orange-100 rounded-b-lg py-1">{{ $n->name }}</p>
                     </div>
-                  @endforeach
-                </div>
-              </section>
+                  </div>
+                @endforeach
+              </div>
             </li>
             {{-- その他 --}}
             <li>
-              <section>
-                <div class="title flex items-center border-b-2 bg-yellow-100 text-gray-700 rounded px-2 py-2">
-                  <img src="/images/other/milk.png" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white">
-                  <h3 class="font-bold ml-2 lg:text-xl">その他</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:w-8 lg:h-8 ml-auto">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                  </svg>
-                </div>
-                <div class="box flex flex-wrap">
-                  @foreach ($other as $n)
-                    <div class="w-1/3 lg:w-1/5 p-2">
-                      <div onclick="document.getElementById('ingredient_id').value = '{{ $n->id }}'" class="selectable-item hover:ring rounded">
-                        <img src="{{ $n->image }}" alt="{{ $n->name }}" class="bg-white h-20 w-28 lg:h-32 lg:w-48 rounded-t-lg">
-                        <p class="text-center bg-yellow-100 rounded-b-lg py-1">{{ $n->name }}</p>
-                      </div>
+              <div class="title flex items-center border-b-2 bg-yellow-100 text-gray-700 rounded px-2 py-2">
+                <img src="/images/other/milk.png" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white">
+                <h3 class="font-bold ml-2 lg:text-xl">その他</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:w-8 lg:h-8 ml-auto">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+              <div class="box flex flex-wrap">
+                @foreach ($other as $n)
+                  <div class="w-1/3 lg:w-1/5 p-2">
+                    <div onclick="document.getElementById('ingredient_id').value = '{{ $n->id }}'" class="selectable-item hover:ring rounded">
+                      <img src="{{ $n->image }}" alt="{{ $n->name }}" class="bg-white h-20 w-28 lg:h-32 lg:w-48 rounded-t-lg">
+                      <p class="text-center bg-yellow-100 rounded-b-lg py-1">{{ $n->name }}</p>
                     </div>
-                  @endforeach
-                </div>
-              </section>
+                  </div>
+                @endforeach
+              </div>
             </li>
             {{-- 冷凍食品 --}}
             <li>
-              <section>
-                <div class="title flex items-center border-b-2 bg-purple-100 text-gray-700 rounded px-2 py-2">
-                  <img src="/images/reitou/souzai.png" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white">
-                  <h3 class="font-bold ml-2 lg:text-xl">冷凍食品</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:w-8 lg:h-8 ml-auto">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                  </svg>
-                </div>
-                <div class="box flex flex-wrap">
-                  @foreach ($reitou as $n)
-                    <div class="w-1/3 lg:w-1/5 p-2">
-                      <div onclick="document.getElementById('ingredient_id').value = '{{ $n->id }}'" class="selectable-item hover:ring rounded">
-                        <img src="{{ $n->image }}" alt="{{ $n->name }}" class="bg-white h-20 w-28 lg:h-32 lg:w-48 rounded-t-lg">
-                        <p class="text-center bg-purple-100 rounded-b-lg py-1">{{ $n->name }}</p>
-                      </div>
+              <div class="title flex items-center border-b-2 bg-purple-100 text-gray-700 rounded px-2 py-2">
+                <img src="/images/reitou/souzai.png" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white">
+                <h3 class="font-bold ml-2 lg:text-xl">冷凍食品</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:w-8 lg:h-8 ml-auto">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+              <div class="box flex flex-wrap">
+                @foreach ($reitou as $n)
+                  <div class="w-1/3 lg:w-1/5 p-2">
+                    <div onclick="document.getElementById('ingredient_id').value = '{{ $n->id }}'" class="selectable-item hover:ring rounded">
+                      <img src="{{ $n->image }}" alt="{{ $n->name }}" class="bg-white h-20 w-28 lg:h-32 lg:w-48 rounded-t-lg">
+                      <p class="text-center bg-purple-100 rounded-b-lg py-1">{{ $n->name }}</p>
                     </div>
-                  @endforeach
-                </div>
-              </section>
+                  </div>
+                @endforeach
+              </div>
             </li>
           </ul>
           <input type="hidden" name="ingredient_id" id="ingredient_id" value="{{ old('ingredient_id') }}">

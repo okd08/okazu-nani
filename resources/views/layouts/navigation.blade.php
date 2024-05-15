@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('items.index') }}">
+                    <a href="{{ route('items.index') }}" title="ホームへ">
                         <img src="{{ asset('/logo.png') }}" alt="サイトロゴ" class="h-10">
                     </a>
                 </div>
