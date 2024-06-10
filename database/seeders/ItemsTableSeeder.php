@@ -15,22 +15,34 @@ class ItemsTableSeeder extends Seeder
     public function run(): void
     {
         $items = [
-            ['user_id' => 1, 'ingredient_id' => 2, 'quantity' => '2', 'kigen' => 5, 'detail' => ''],
-            ['user_id' => 1, 'ingredient_id' => 4, 'quantity' => '1', 'kigen' => 6, 'detail' => ''],
-            ['user_id' => 1, 'ingredient_id' => 6, 'quantity' => '1', 'kigen' => 6, 'detail' => ''],
-            ['user_id' => 1, 'ingredient_id' => 11, 'quantity' => '1', 'kigen' => 1, 'detail' => '200g'],
-            ['user_id' => 1, 'ingredient_id' => 19, 'quantity' => '2', 'kigen' => 14, 'detail' => ''],
-            ['user_id' => 1, 'ingredient_id' => 22, 'quantity' => '1/2', 'kigen' => 12, 'detail' => ''],
-            ['user_id' => 1, 'ingredient_id' => 25, 'quantity' => '1', 'kigen' => 7, 'detail' => ''],
-            ['user_id' => 1, 'ingredient_id' => 28, 'quantity' => '5', 'kigen' => 21, 'detail' => ''],
-            ['user_id' => 1, 'ingredient_id' => 38, 'quantity' => '1', 'kigen' => 12, 'detail' => ''],
-            ['user_id' => 1, 'ingredient_id' => 45, 'quantity' => '1', 'kigen' => 10, 'detail' => '2本入り'],
-            ['user_id' => 1, 'ingredient_id' => 49, 'quantity' => '1', 'kigen' => 7, 'detail' => '500ml'],
-            ['user_id' => 1, 'ingredient_id' => 50, 'quantity' => '8', 'kigen' => 12, 'detail' => '10個入りパック'],
-            ['user_id' => 1, 'ingredient_id' => 51, 'quantity' => '3', 'kigen' => 6, 'detail' => '1個150g'],
-            ['user_id' => 1, 'ingredient_id' => 57, 'quantity' => '3', 'kigen' => 8, 'detail' => ''],
-            ['user_id' => 1, 'ingredient_id' => 64, 'quantity' => '3', 'kigen' => 21, 'detail' => ''],
-            ['user_id' => 1, 'ingredient_id' => 68, 'quantity' => '1', 'kigen' => 21, 'detail' => '冷凍からあげ 500g'],
+            ['user_id' => 1, 'ingredient_id' => 6, 'quantity' => 1, 'kigen' => 21, 'detail' => '冷凍', 'created_at' => '2024-06-03 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 5, 'quantity' => 1, 'kigen' => 21, 'detail' => '冷凍', 'created_at' => '2024-06-03 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 3, 'quantity' => 1, 'kigen' => 21, 'detail' => '冷凍', 'created_at' => '2024-06-03 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 21, 'quantity' => 3, 'kigen' => 14, 'detail' => '', 'created_at' => '2024-06-01 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 19, 'quantity' => 2, 'kigen' => 14, 'detail' => '', 'created_at' => '2024-06-01 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 20, 'quantity' => 1, 'kigen' => 10, 'detail' => '', 'created_at' => '2024-06-01 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 7, 'quantity' => 1, 'kigen' => 21, 'detail' => '冷凍、300g', 'created_at' => '2024-06-03 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 6, 'quantity' => 2, 'kigen' => 21, 'detail' => '冷凍', 'created_at' => '2024-06-10 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 5, 'quantity' => 2, 'kigen' => 21, 'detail' => '冷凍', 'created_at' => '2024-06-10 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 2, 'quantity' => 1, 'kigen' => 21, 'detail' => '冷凍', 'created_at' => '2024-06-10 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 23, 'quantity' => 1, 'kigen' => 14, 'detail' => '', 'created_at' => '2024-06-10 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 20, 'quantity' => 1, 'kigen' => 14, 'detail' => '', 'created_at' => '2024-06-10 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 24, 'quantity' => 1, 'kigen' => 7, 'detail' => '', 'created_at' => '2024-06-10 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 25, 'quantity' => 2, 'kigen' => 7, 'detail' => '', 'created_at' => '2024-06-10 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 11, 'quantity' => 2, 'kigen' => 2, 'detail' => '', 'created_at' => '2024-06-10 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 31, 'quantity' => 3, 'kigen' => 10, 'detail' => '', 'created_at' => '2024-06-10 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 36, 'quantity' => 1, 'kigen' => 10, 'detail' => '', 'created_at' => '2024-06-10 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 27, 'quantity' => 1, 'kigen' => 14, 'detail' => '', 'created_at' => '2024-06-10 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 45, 'quantity' => 2, 'kigen' => 10, 'detail' => '', 'created_at' => '2024-06-10 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 44, 'quantity' => 1, 'kigen' => 10, 'detail' => '', 'created_at' => '2024-06-10 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 29, 'quantity' => 3, 'kigen' => 21, 'detail' => '', 'created_at' => '2024-06-10 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 49, 'quantity' => 2, 'kigen' => 7, 'detail' => '', 'created_at' => '2024-06-10 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 50, 'quantity' => 10, 'kigen' => 10, 'detail' => '', 'created_at' => '2024-06-10 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 51, 'quantity' => 3, 'kigen' => 10, 'detail' => '', 'created_at' => '2024-06-05 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 53, 'quantity' => 1, 'kigen' => 10, 'detail' => '', 'created_at' => '2024-06-05 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 57, 'quantity' => 1, 'kigen' => 10, 'detail' => '', 'created_at' => '2024-06-05 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 68, 'quantity' => 1, 'kigen' => 21, 'detail' => 'サバの味噌煮', 'created_at' => '2024-06-03 12:00:00'],
+            ['user_id' => 1, 'ingredient_id' => 69, 'quantity' => 1, 'kigen' => 21, 'detail' => 'エビフライ', 'created_at' => '2024-06-03 12:00:00'],
         ];
 
         foreach ($items as $item) {
@@ -43,6 +55,7 @@ class ItemsTableSeeder extends Seeder
                 'kigen' => $item['kigen'],
                 'detail' => $item['detail'],
                 'expiration_date' => $expiration_date,
+                'created_at' => $item['created_at'],
             ]);
         }
     }
